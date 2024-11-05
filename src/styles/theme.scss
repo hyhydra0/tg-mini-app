@@ -1,0 +1,22 @@
+:root:root {
+  --dark-color: #fff;
+  --light-color: #2f3c6b;
+  --dark-bg-color: #2f3c6b;
+}
+
+:root.light {
+  --test: blue;
+  --ant-input: rgba(47, 60, 107, 0.5);
+}
+
+:root.dark {
+  --test: red;
+  --ant-input: rgba(113, 117, 151, 1);
+}
+
+.light {
+  color: var(--light-color);
+}
+
+.dark {
+}
