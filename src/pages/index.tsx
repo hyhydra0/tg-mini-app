@@ -7,27 +7,33 @@ const App: React.FC = () => {
     // Ensure the Telegram WebApp API is available
     if (window.Telegram.WebApp) {
       // Initialize the web app
-      Telegram.WebApp.ready();
+      window.Telegram.WebApp.ready();
 
       // Function to handle sending data for different buttons
-      function sendDataForButton(buttonId) {
-        Telegram.WebApp.sendData(
+      function sendDataForButton(buttonId: string) {
+        window.Telegram.WebApp.sendData(
           JSON.stringify({ action: "button_click", button_id: buttonId })
         );
       }
 
       // Add event listeners for each button
-      document.getElementById("button1").addEventListener("click", function () {
-        sendDataForButton("button1");
-      });
+      window.document
+        .getElementById("button1")
+        ?.addEventListener("click", function () {
+          sendDataForButton("button1");
+        });
 
-      document.getElementById("button2").addEventListener("click", function () {
-        sendDataForButton("button2");
-      });
+      window.document
+        .getElementById("button2")
+        ?.addEventListener("click", function () {
+          sendDataForButton("button2");
+        });
 
-      document.getElementById("button3").addEventListener("click", function () {
-        sendDataForButton("button3");
-      });
+      window.document
+        .getElementById("button3")
+        ?.addEventListener("click", function () {
+          sendDataForButton("button3");
+        });
     }
   });
   return (
