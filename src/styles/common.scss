@@ -21,8 +21,11 @@ body,
 [lang]:lang(en),
 body,
 html {
-  font-family: "Roboto", sans-serif;
-  font-display: fallback;
+  // font-family: "Roboto", sans-serif;
+  font-family: "Jura", sans-serif;
+  word-wrap: break-word;
+  // font-display: fallback;
+  @apply text-light_color;
 }
 
 .scroll {
@@ -47,4 +50,13 @@ input::-webkit-input-placeholder {
 .scrollX,
 .scrollY::-webkit-scrollbar {
   display: none;
+}
+
+.custom-box-shadow-1 {
+  box-shadow: 0px 0px 10px 0px rgba(143, 3, 255, 0.86);
+}
+
+.custom-box-shadow-2 {
+  // box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 15px 0px #004ce0;
 }
