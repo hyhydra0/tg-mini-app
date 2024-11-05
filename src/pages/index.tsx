@@ -1,7 +1,35 @@
 import Layout from "@/layout";
 import event from "@/assets/event.jpg";
+import React from "react";
 
 const App: React.FC = () => {
+  React.useEffect(() => {
+    // Ensure the Telegram WebApp API is available
+    if (window.Telegram.WebApp) {
+      // Initialize the web app
+      Telegram.WebApp.ready();
+
+      // Function to handle sending data for different buttons
+      function sendDataForButton(buttonId) {
+        Telegram.WebApp.sendData(
+          JSON.stringify({ action: "button_click", button_id: buttonId })
+        );
+      }
+
+      // Add event listeners for each button
+      document.getElementById("button1").addEventListener("click", function () {
+        sendDataForButton("button1");
+      });
+
+      document.getElementById("button2").addEventListener("click", function () {
+        sendDataForButton("button2");
+      });
+
+      document.getElementById("button3").addEventListener("click", function () {
+        sendDataForButton("button3");
+      });
+    }
+  });
   return (
     <Layout>
       <div className="flex flex-col p-[16px] gap-[24px]">
@@ -37,12 +65,12 @@ const App: React.FC = () => {
                 </div>
               </div>
             </div>
-            <a
-              href="https://projectpolyverse.cpventure.io"
+            <button
+              id={`button${item}`}
               className="border-[1px] border-solid border-white text-center text-[12px] rounded-[8px] py-[2px]"
             >
               visit
-            </a>
+            </button>
           </div>
         ))}
       </div>
