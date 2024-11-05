@@ -38,7 +38,7 @@ const App: React.FC = () => {
               </div>
             </div>
             <a
-              href="#"
+              href="https://projectpolyverse.cpventure.io"
               className="border-[1px] border-solid border-white text-center text-[12px] rounded-[8px] py-[2px]"
             >
               visit
