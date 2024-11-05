@@ -1,0 +1,50 @@
+html {
+  transition: background-color 0.2s;
+  height: 100%;
+}
+
+body {
+  font-size: 12px;
+  text-transform: capitalize;
+  height: 100%;
+  touch-action: manipulation;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+*,
+:lang(en) body,
+[lang]:lang(en),
+body,
+html {
+  font-family: "Roboto", sans-serif;
+  font-display: fallback;
+}
+
+.scroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+input::-webkit-input-placeholder {
+  color: #9a9ea4 !important;
+}
+
+.scrollY {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollX {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollX,
+.scrollY::-webkit-scrollbar {
+  display: none;
+}
