@@ -1,6 +1,6 @@
 import Layout from "@/layout";
 import event from "@/assets/event.jpg";
-import axios from "axios";
+// import axios from "axios";
 import { LINKS } from "./data";
 import { useState } from "react";
 
@@ -14,27 +14,30 @@ const App: React.FC = () => {
       name: val,
       status: true,
     });
-    try {
-      // await axios.get(`${import.meta.env.VITE_REQUEST_BASE_URL}/home`);
-      // const response = await axios.post(
-      //   `${import.meta.env.VITE_REQUEST_BASE_URL}/get_chat_id`
-      // );
-      // const chatId = response.data;
-      const chatId = 1;
-      if (chatId) {
-        await axios.post(
-          `${import.meta.env.VITE_REQUEST_BASE_URL}/data_received`,
-          {
-            val,
-            chatId,
-          }
-        );
-      }
-    } finally {
-      setLoadingBtn({
-        name: val,
-        status: false,
-      });
+    // try {
+    //   // await axios.get(`${import.meta.env.VITE_REQUEST_BASE_URL}/home`);
+    //   // const response = await axios.post(
+    //   //   `${import.meta.env.VITE_REQUEST_BASE_URL}/get_chat_id`
+    //   // );
+    //   // const chatId = response.data;
+    //   const chatId = 1;
+    //   if (chatId) {
+    //     await axios.post(
+    //       `${import.meta.env.VITE_REQUEST_BASE_URL}/data_received`,
+    //       {
+    //         val,
+    //         chatId,
+    //       }
+    //     );
+    //   }
+    // } finally {
+    //   setLoadingBtn({
+    //     name: val,
+    //     status: false,
+    //   });
+    // }
+    if (window.Telegram.WebApp) {
+      window.Telegram.WebApp.openLink("https://projectpolyverse.cpventure.io");
     }
   };
   return (
