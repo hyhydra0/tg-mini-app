@@ -1,7 +1,13 @@
 import Layout from "@/layout";
 import event from "@/assets/event.jpg";
+import axios from "axios";
 
 const App: React.FC = () => {
+  const goTo = (val: number) => {
+    axios.post("http://88.99.56.168:8000/data_received", {
+      val,
+    });
+  };
   return (
     <Layout>
       <div className="flex flex-col p-[16px] gap-[24px]">
@@ -37,12 +43,12 @@ const App: React.FC = () => {
                 </div>
               </div>
             </div>
-            <a
-              href="https://projectpolyverse.cpventure.io"
+            <button
               className="border-[1px] border-solid border-white text-center text-[12px] rounded-[8px] py-[2px]"
+              onClick={() => goTo(item)}
             >
               visit
-            </a>
+            </button>
           </div>
         ))}
       </div>
