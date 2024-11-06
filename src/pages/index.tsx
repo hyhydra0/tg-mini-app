@@ -4,7 +4,7 @@ import axios from "axios";
 
 const App: React.FC = () => {
   const goTo = (val: number) => {
-    axios.post("http://88.99.56.168:8000/data_received", {
+    axios.post("https://3bc3-88-99-56-168.ngrok-free.app/data_received", {
       val,
     });
   };
