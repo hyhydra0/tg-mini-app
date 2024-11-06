@@ -1,5 +1,4 @@
 import Layout from "@/layout";
-import event from "@/assets/event.jpg";
 // import axios from "axios";
 import { LINKS } from "./data";
 
@@ -60,7 +59,7 @@ const App: React.FC = () => {
             className="flex gap-[12px] flex-col py-[12px] px-[12px] rounded-[16px] bg-[#0C0C0CEB] custom-box-shadow-2"
           >
             <div className="flex gap-[8px] items-center">
-              <img src={event} alt="" className="w-[120px] rounded-[12px]" />
+              <img src={item.img} alt="" className="w-[120px] rounded-[12px]" />
               <div className="flex flex-col ">
                 <div className="text-[13px] font-[500]">{item.name}</div>
                 <div className="text-[12px] text-[#B2B2B2]">{item.title}</div>
