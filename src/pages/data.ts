@@ -38,8 +38,15 @@ export const LINKS: Link[] = [
   {
     id: 5,
     name: "game",
-    title: "Want to see some game play? Click here to visit",
+    title: "Want to see some game play? Please click here to visit",
     text: "Open Game streaming in Browser",
     url: "https://player.vimeo.com/video/1026098302?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+  },
+  {
+    id: 5,
+    name: "whitepaper",
+    title: "Want to see our whitepaper? Please check out here",
+    text: "Open Whitepaper streaming in Browser",
+    url: "https://projectpolyverse.gitbook.io/polyverse-token-economy-whitepaper/tokenomics-breakdown",
   },
 ];
