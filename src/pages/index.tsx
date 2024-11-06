@@ -1,12 +1,16 @@
 import Layout from "@/layout";
 import event from "@/assets/event.jpg";
 import axios from "axios";
+import { LINKS } from "./data";
 
 const App: React.FC = () => {
-  const goTo = (val: number) => {
-    axios.post("https://3bc3-88-99-56-168.ngrok-free.app/data_received", {
+  const goTo = (val: string) => {
+    axios.post(`${import.meta.env.VITE_REQUEST_BASE_URL}/data_received`, {
       val,
     });
+    // axios.post(`https://3bc3-88-99-56-168.ngrok-free.app/data_received`, {
+    //   val,
+    // });
   };
   return (
     <Layout>
@@ -29,15 +33,15 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {[1, 2, 3].map((item) => (
+        {LINKS.map((item) => (
           <div
-            key={item}
+            key={item.id}
             className="flex gap-[12px] flex-col py-[12px] px-[12px] rounded-[16px] bg-[#0C0C0CEB] custom-box-shadow-2"
           >
             <div className="flex gap-[8px] items-center">
               <img src={event} alt="" className="w-[120px] rounded-[12px]" />
               <div className="flex flex-col ">
-                <div className="text-[13px] font-[500]">Website</div>
+                <div className="text-[13px] font-[500]">{item.name}</div>
                 <div className="text-[12px] text-[#B2B2B2]">
                   Check out our amazing website, powered by CP ventures
                 </div>
@@ -45,7 +49,7 @@ const App: React.FC = () => {
             </div>
             <button
               className="border-[1px] border-solid border-white text-center text-[12px] rounded-[8px] py-[2px]"
-              onClick={() => goTo(item)}
+              onClick={() => goTo(item.name)}
             >
               visit
             </button>
