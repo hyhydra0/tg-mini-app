@@ -37,7 +37,9 @@ const App: React.FC = () => {
     //   });
     // }
     if (window.Telegram.WebApp) {
-      window.Telegram.WebApp.openLink("https://projectpolyverse.cpventure.io");
+      window.Telegram.WebApp.openLink(
+        LINKS.find((item) => item.name === val)?.url
+      );
     }
   };
   return (
