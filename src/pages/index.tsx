@@ -2,18 +2,9 @@ import Layout from "@/layout";
 import event from "@/assets/event.jpg";
 // import axios from "axios";
 import { LINKS } from "./data";
-import { useState } from "react";
 
 const App: React.FC = () => {
-  const [loadingBtn, setLoadingBtn] = useState<{
-    name: string;
-    status: boolean;
-  }>({ name: "", status: false });
-  const goTo = async (val: string) => {
-    setLoadingBtn({
-      name: val,
-      status: true,
-    });
+  const goTo = (val: string) => {
     // try {
     //   // await axios.get(`${import.meta.env.VITE_REQUEST_BASE_URL}/home`);
     //   // const response = await axios.post(
@@ -79,9 +70,7 @@ const App: React.FC = () => {
               className="border-[1px] border-solid border-white text-center text-[12px] rounded-[8px] py-[2px]"
               onClick={() => goTo(item.name)}
             >
-              {loadingBtn.name === item.name && loadingBtn.status === true
-                ? "Loading..."
-                : "Visit"}
+              Visit
             </button>
           </div>
         ))}
