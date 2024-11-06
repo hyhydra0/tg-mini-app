@@ -42,9 +42,7 @@ const App: React.FC = () => {
               <img src={event} alt="" className="w-[120px] rounded-[12px]" />
               <div className="flex flex-col ">
                 <div className="text-[13px] font-[500]">{item.name}</div>
-                <div className="text-[12px] text-[#B2B2B2]">
-                  Check out our amazing website, powered by CP ventures
-                </div>
+                <div className="text-[12px] text-[#B2B2B2]">{item.title}</div>
               </div>
             </div>
             <button
