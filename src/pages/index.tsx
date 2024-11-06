@@ -15,10 +15,12 @@ const App: React.FC = () => {
       status: true,
     });
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_REQUEST_BASE_URL}/get_chat_id`
-      );
-      const chatId = response.data;
+      // await axios.get(`${import.meta.env.VITE_REQUEST_BASE_URL}/home`);
+      // const response = await axios.post(
+      //   `${import.meta.env.VITE_REQUEST_BASE_URL}/get_chat_id`
+      // );
+      // const chatId = response.data;
+      const chatId = 1;
       if (chatId) {
         await axios.post(
           `${import.meta.env.VITE_REQUEST_BASE_URL}/data_received`,
