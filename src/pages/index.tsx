@@ -12,7 +12,7 @@ const App: React.FC = () => {
   const goTo = async (val: string) => {
     setLoadingBtn({
       name: val,
-      status: true,
+      status: false,
     });
     // try {
     //   // await axios.get(`${import.meta.env.VITE_REQUEST_BASE_URL}/home`);
