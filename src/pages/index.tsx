@@ -2,15 +2,38 @@ import Layout from "@/layout";
 import event from "@/assets/event.jpg";
 import axios from "axios";
 import { LINKS } from "./data";
+import { useState } from "react";
 
 const App: React.FC = () => {
-  const goTo = (val: string) => {
-    axios.post(`${import.meta.env.VITE_REQUEST_BASE_URL}/data_received`, {
-      val,
+  const [loadingBtn, setLoadingBtn] = useState<{
+    name: string;
+    status: boolean;
+  }>({ name: "", status: false });
+  const goTo = async (val: string) => {
+    setLoadingBtn({
+      name: val,
+      status: true,
     });
-    // axios.post(`https://3bc3-88-99-56-168.ngrok-free.app/data_received`, {
-    //   val,
-    // });
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_REQUEST_BASE_URL}/get_chat_id`
+      );
+      const chatId = response.data;
+      if (chatId) {
+        await axios.post(
+          `${import.meta.env.VITE_REQUEST_BASE_URL}/data_received`,
+          {
+            val,
+            chatId,
+          }
+        );
+      }
+    } finally {
+      setLoadingBtn({
+        name: val,
+        status: false,
+      });
+    }
   };
   return (
     <Layout>
@@ -49,7 +72,9 @@ const App: React.FC = () => {
               className="border-[1px] border-solid border-white text-center text-[12px] rounded-[8px] py-[2px]"
               onClick={() => goTo(item.name)}
             >
-              visit
+              {loadingBtn.name === item.name && loadingBtn.status === true
+                ? "Loading..."
+                : "Visit"}
             </button>
           </div>
         ))}
