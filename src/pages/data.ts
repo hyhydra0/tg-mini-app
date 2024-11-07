@@ -44,7 +44,7 @@ export const LINKS: Link[] = [
     name: "roadmap",
     title: "What is the future of Polyverse? Find out here what’s cooking",
     text: "Open Roadmap in Browser",
-    url: "https://projectpolyverse.cpventure.io/roadmap",
+    url: "https://projectpolyverse.cpventure.io/#roadmap",
     img: roadmap,
   },
   {
