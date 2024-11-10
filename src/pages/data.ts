@@ -9,9 +9,9 @@ type Link = {
 
 import website from "@/assets/website.png";
 import event from "@/assets/event.jpg";
-import vision from "@/assets/vision.png";
+import vision from "@/assets/vision.jpg";
 import roadmap from "@/assets/roadmap.jpg";
-import game from "@/assets/game.png";
+import game from "@/assets/game.jpg";
 import whitepaper from "@/assets/whitepaper.png";
 
 export const LINKS: Link[] = [
