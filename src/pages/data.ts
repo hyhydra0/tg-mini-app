@@ -7,12 +7,12 @@ type Link = {
   img: any;
 };
 
-import website from "@/assets/website.png";
-import event from "@/assets/event.jpg";
-import vision from "@/assets/vision.jpg";
-import roadmap from "@/assets/roadmap.jpg";
-import game from "@/assets/game.jpg";
-import whitepaper from "@/assets/whitepaper.png";
+import website from "@/assets/website.webp";
+import event from "@/assets/event.webp";
+import vision from "@/assets/vision.webp";
+import roadmap from "@/assets/roadmap.webp";
+import game from "@/assets/game.webp";
+import whitepaper from "@/assets/whitepaper.webp";
 
 export const LINKS: Link[] = [
   {
