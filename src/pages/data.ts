@@ -26,9 +26,9 @@ export const LINKS: Link[] = [
   {
     id: 2,
     name: "event",
-    title: " An incredible event is coming up soon, join the event now",
+    title: " Buy Patik token",
     text: "Open Event in Browser",
-    url: "https://eventprojectpolyverse.cpventure.io/pre",
+    url: "https://projects.cryptoperformance.io/login",
     img: event,
   },
   {
