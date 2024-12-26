@@ -4,28 +4,6 @@ import { LINKS } from "./data";
 
 const App: React.FC = () => {
   const goTo = (val: string) => {
-    // try {
-    //   // await axios.get(`${import.meta.env.VITE_REQUEST_BASE_URL}/home`);
-    //   // const response = await axios.post(
-    //   //   `${import.meta.env.VITE_REQUEST_BASE_URL}/get_chat_id`
-    //   // );
-    //   // const chatId = response.data;
-    //   const chatId = 1;
-    //   if (chatId) {
-    //     await axios.post(
-    //       `${import.meta.env.VITE_REQUEST_BASE_URL}/data_received`,
-    //       {
-    //         val,
-    //         chatId,
-    //       }
-    //     );
-    //   }
-    // } finally {
-    //   setLoadingBtn({
-    //     name: val,
-    //     status: false,
-    //   });
-    // }
     if (window.Telegram.WebApp) {
       window.Telegram.WebApp.openLink(
         LINKS.find((item) => item.name === val)?.url
